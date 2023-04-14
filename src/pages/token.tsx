@@ -1,9 +1,9 @@
-import styles from '../styles/Home.module.css'
-import contractAddresses from '../configs/contractAddresses'
 import { useProgram, useTokenSupply } from '@thirdweb-dev/react/solana'
+import { contractAddresses } from 'configs/contractAddresses'
+import styles from 'styles/Home.module.css'
 
 export default function Token() {
-  const { program } = useProgram(contractAddresses[2].address, 'token')
+  const { program } = useProgram(contractAddresses.TOKEN.address, 'token')
   const balanceQuery = useTokenSupply(program)
 
   return (
@@ -17,7 +17,7 @@ export default function Token() {
           <div className={styles.tokenItem}>
             <h3 className={styles.tokenLabel}>Total Supply</h3>
             <p className={styles.tokenValue}>
-              {balanceQuery.isLoading ? 'Loading...' : balanceQuery.data?.displayValue}
+              {balanceQuery.isLoading ? 'Loading...' : balanceQuery.data?.displayValue || ''}
             </p>
           </div>
         </div>

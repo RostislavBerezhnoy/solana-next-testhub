@@ -1,7 +1,7 @@
-import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
 import React from 'react'
-import styles from '../styles/Home.module.css'
+import styles from 'styles/Home.module.css'
 
 export default function Header() {
   return (
@@ -13,9 +13,9 @@ export default function Header() {
           </Link>
         </div>
       </div>
-      <div className={styles.right}>
-        <WalletMultiButton />
-      </div>
     </div>
   )
 }
+
+//wallet-adapter-button-start-icon
+//alt="Phantom icon"

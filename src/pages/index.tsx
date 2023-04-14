@@ -1,6 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 import type { NextPage } from 'next'
 import { useRouter } from 'next/router'
-import styles from '../styles/Home.module.css'
+import styles from 'styles/Home.module.css'
 
 const Blocks = [
   {
@@ -30,8 +31,8 @@ const Home: NextPage = () => {
     <>
       <div className={styles.container}>
         <div className={styles.iconContainer}>
-          <img src='/thirdweb.svg' className={styles.icon} />
-          <img src='/sol.png' className={styles.icon} />
+          <img src='/thirdweb.svg' className={styles.icon} alt='' />
+          <img src='/sol.png' className={styles.icon} alt='' />
         </div>
         <div className={styles.contractBoxGrid}>
           {Blocks.map(c => (
@@ -41,7 +42,7 @@ const Home: NextPage = () => {
               onClick={() => router.push(`${c.link}`)}
             >
               <div className={styles.contractImage}>
-                <img src={c.icon} />
+                <img src={c.icon} alt='' />
               </div>
               <h3 className={styles.cardName}>{c.name}</h3>
               <p className={styles.description}>{c.description}</p>

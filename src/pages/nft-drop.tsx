@@ -1,15 +1,17 @@
-import contractAddresses from '../configs/contractAddresses'
-import styles from '../styles/Home.module.css'
+/* eslint-disable unicorn/filename-case */
+/* eslint-disable @next/next/no-img-element */
+import { useMemo } from 'react'
 import { useProgram, useClaimNFT } from '@thirdweb-dev/react/solana'
 import { useWallet } from '@solana/wallet-adapter-react'
-import { useMemo } from 'react'
+import { contractAddresses } from 'configs/contractAddresses'
+import styles from 'styles/Home.module.css'
 
 export default function NFTDrop() {
   const { publicKey, connected } = useWallet()
   const walletAddress = useMemo(() => publicKey?.toBase58(), [publicKey])
   console.log(walletAddress)
 
-  const { program } = useProgram(contractAddresses[0].address, 'nft-drop')
+  const { program } = useProgram(contractAddresses.DROP.address, 'nft-drop')
   const claim = useClaimNFT(program)
 
   return (
