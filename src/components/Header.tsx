@@ -17,5 +17,3 @@ export default function Header() {
   )
 }
 
-//wallet-adapter-button-start-icon
-//alt="Phantom icon"
